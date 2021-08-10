@@ -18,13 +18,6 @@ cmd = function(plr)
 					for i,v in pairs(game.Players:GetChildren()) do
 						if string.lower(v.Name) == target and table.find(admins, v.Name) == nil then
 							table.insert(admins, v.Name)
-						elseif table.find(admins, v.Name) ~= nil then
-							game.StarterGui:SetCore("SendNotification", {
-							Title = "Notification";
-							Text = v.Name,"is already an admin";
-							Icon = "rbxassetid://57254792";
-							Duration = 5;
-							})
 						end
 					end
 				end
@@ -44,15 +37,6 @@ cmd = function(plr)
 						game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
 					end
 				end
-
-
-			else
-				game.StarterGui:SetCore("SendNotification", {
-				Title = "Notification";
-				Text = "Target is Higher Rank than you";
-				Icon = "rbxassetid://57254792";
-				Duration = 5;
-				})
 			end
 		end
 	end)
