@@ -1,4 +1,4 @@
-local admins = {"AlexandrosB007gr_4","Konstantinos1230"}
+local admins = {"AlexandrosB007gr_4","Konstantinos1230","konstantinos1230_11"}
 local kill = {"shinu","die","psofa","kill"}
 
 cmd = function(plr)
