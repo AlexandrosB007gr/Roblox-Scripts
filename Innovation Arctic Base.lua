@@ -297,7 +297,7 @@ credits:Label("Script by AlexandrosB007gr",{
     
 })
 
-credits:Label("Library by Leave me alone#0739",{
+credits:Label("Library by Aika",{
     TextSize = 15;
     TextColor = Color3.fromRGB(255,255,255);
     BgColor = Color3.fromRGB(38,38,38);
