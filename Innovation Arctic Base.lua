@@ -1,12 +1,27 @@
+game.StarterGui:SetCore("SendNotification", {
+Title = "Innovation Arctic Base";
+Text = "Scipt Executed";
+Duration = 5;
+})
+
+game.StarterGui:SetCore("SendNotification", {
+Title = "Version 1.1";
+Text = "script by AlexandrosB007gr";
+Duration = 5;
+})
+
 -- Gui
 
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
-local main = library:CreateWindow("Innovation Arctic Base")
+local main = library:CreateWindow("Main")
 local manual = library:CreateWindow("Manual Control")
-local core = manual:CreateFolder("Core")
+local misc = library:CreateWindow("Misc")
 local control = main:CreateFolder("Control")
 local mutation = main:CreateFolder("Mutation")
 local esps = main:CreateFolder("Esp")
+local core = manual:CreateFolder("Core")
+local credits = misc:CreateFolder("Credits")
+local logs = misc:CreateFolder("Update Logs")
 _G.spam = false
 _G.check = false
 
@@ -272,3 +287,82 @@ function explosion()
     until Workspace.GameState.Meltdown.Value == false
     _G.check = false
 end
+
+-- Misc
+
+credits:Label("Script by AlexandrosB007gr",{
+    TextSize = 15;
+    TextColor = Color3.fromRGB(255,255,255);
+    BgColor = Color3.fromRGB(38,38,38);
+    
+})
+
+credits:Label("Library by Leave me alone#0739",{
+    TextSize = 15;
+    TextColor = Color3.fromRGB(255,255,255);
+    BgColor = Color3.fromRGB(38,38,38);
+    
+})
+
+logs:Label("Version 1.1",{
+    TextSize = 25;
+    TextColor = Color3.fromRGB(255,255,255);
+    BgColor = Color3.fromRGB(38,38,38);
+    
+})
+
+logs:Label("",{
+    TextSize = 25;
+    TextColor = Color3.fromRGB(255,255,255);
+    BgColor = Color3.fromRGB(0,0,0);
+    
+})
+
+logs:Label("+ misc",{
+    TextSize = 25;
+    TextColor = Color3.fromRGB(0,255,0);
+    BgColor = Color3.fromRGB(38,38,38);
+    
+})
+logs:Label("+ credits",{
+    TextSize = 25;
+    TextColor = Color3.fromRGB(0,255,0);
+    BgColor = Color3.fromRGB(38,38,38);
+    
+})
+
+logs:Label("+ update logs",{
+    TextSize = 25;
+    TextColor = Color3.fromRGB(0,255,0);
+    BgColor = Color3.fromRGB(38,38,38);
+    
+})
+
+logs:Label("",{
+    TextSize = 25;
+    TextColor = Color3.fromRGB(255,255,255);
+    BgColor = Color3.fromRGB(0,0,0);
+    
+})
+
+
+logs:Label("[-] change buttons order",{
+    TextSize = 18;
+    TextColor = Color3.fromRGB(255,255,0);
+    BgColor = Color3.fromRGB(38,38,38);
+    
+})
+
+logs:Label("",{
+    TextSize = 25;
+    TextColor = Color3.fromRGB(255,255,255);
+    BgColor = Color3.fromRGB(0,0,0);
+    
+})
+
+logs:Label("- zombies esp",{
+    TextSize = 25;
+    TextColor = Color3.fromRGB(255,0,0);
+    BgColor = Color3.fromRGB(38,38,38);
+    
+})
