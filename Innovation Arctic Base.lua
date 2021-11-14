@@ -5,23 +5,8 @@ Duration = 5;
 })
 
 game.StarterGui:SetCore("SendNotification", {
-Title = "Version 1.1";
+Title = "Version 1.2";
 Text = "script by AlexandrosB007gr";
-Duration = 5;
-})
-
-local vu = game:GetService("VirtualUser")
-game:GetService("Players").LocalPlayer.Idled:connect(function()
-    vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-    wait(1)
-    vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-end)
-
-wait(2)
-
-game.StarterGui:SetCore("SendNotification", {
-Title = "Anti AFK";
-Text = "Executed";
 Duration = 5;
 })
 
@@ -35,6 +20,7 @@ local control = main:CreateFolder("Control")
 local mutation = main:CreateFolder("Mutation")
 local esps = main:CreateFolder("Esp")
 local core = manual:CreateFolder("Core")
+local lplayer = misc:CreateFolder("Local Player")
 local credits = misc:CreateFolder("Credits")
 local logs = misc:CreateFolder("Update Logs")
 _G.spam = false
@@ -305,6 +291,27 @@ end
 
 -- Misc
 
+lplayer:Slider("Walk Speed",{
+    min = 10;
+    max = 40;
+    precise = false;
+},function(value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+end)
+
+lplayer:Slider("Jump Power",{
+    min = 10;
+    max = 100;
+    precise = false;
+},function(value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
+end)
+
+lplayer:Button("Back To Normal",function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
+
 credits:Label("Script by AlexandrosB007gr",{
     TextSize = 15;
     TextColor = Color3.fromRGB(255,255,255);
@@ -312,14 +319,14 @@ credits:Label("Script by AlexandrosB007gr",{
     
 })
 
-credits:Label("Library > Wally Ui v3",{
+credits:Label("Library by Leave me alone#0739",{
     TextSize = 15;
     TextColor = Color3.fromRGB(255,255,255);
     BgColor = Color3.fromRGB(38,38,38);
     
 })
 
-logs:Label("Version 1.1",{
+logs:Label("Version 1.2",{
     TextSize = 25;
     TextColor = Color3.fromRGB(255,255,255);
     BgColor = Color3.fromRGB(38,38,38);
@@ -333,25 +340,19 @@ logs:Label("",{
     
 })
 
-logs:Label("+ misc",{
-    TextSize = 25;
+logs:Label("+ speed/jump changer",{
+    TextSize = 20;
     TextColor = Color3.fromRGB(0,255,0);
     BgColor = Color3.fromRGB(38,38,38);
     
 })
-logs:Label("+ credits",{
+logs:Label("+ auto anti afk",{
     TextSize = 25;
     TextColor = Color3.fromRGB(0,255,0);
     BgColor = Color3.fromRGB(38,38,38);
     
 })
 
-logs:Label("+ update logs",{
-    TextSize = 25;
-    TextColor = Color3.fromRGB(0,255,0);
-    BgColor = Color3.fromRGB(38,38,38);
-    
-})
 
 logs:Label("",{
     TextSize = 25;
@@ -361,7 +362,7 @@ logs:Label("",{
 })
 
 
-logs:Label("[-] change buttons order",{
+logs:Label("[-]",{
     TextSize = 18;
     TextColor = Color3.fromRGB(255,255,0);
     BgColor = Color3.fromRGB(38,38,38);
@@ -375,9 +376,22 @@ logs:Label("",{
     
 })
 
-logs:Label("- zombies esp",{
+logs:Label("-",{
     TextSize = 25;
     TextColor = Color3.fromRGB(255,0,0);
     BgColor = Color3.fromRGB(38,38,38);
     
+})
+
+local vu = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+    vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    wait(1)
+    vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+
+game.StarterGui:SetCore("SendNotification", {
+Title = "Anti AFK";
+Text = "Executed";
+Duration = 5;
 })
