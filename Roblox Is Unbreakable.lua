@@ -13,7 +13,7 @@ local Coin = Esp:CreateFolder("Coins")
 local Presents = Esp:CreateFolder("Presents")
 
 local HRP = game.Players.LocalPlayer.Character.HumanoidRootPart
-local debounce = 0.5
+local debounce = 0.3
 local autopickup = false
 
 Settings:Toggle("Auto Pickup",function(bool)
