@@ -13,7 +13,7 @@ local Coin = Esp:CreateFolder("Coins")
 local Presents = Esp:CreateFolder("Presents")
 
 local HRP = game.Players.LocalPlayer.Character.HumanoidRootPart
-local debounce = 0.5
+local debounce = 0.1
 local autopickup = false
 
 Settings:Toggle("Auto Pickup",function(bool)
@@ -28,7 +28,6 @@ Arrows:Button("Teleport",function()
         local arrow = workspace.Map.Items.SpawnedItems:FindFirstChild("Arrow")
         HRP.CFrame = arrow.Handle.CFrame
         if autopickup then
-            game.Players.LocalPlayer.Character.Humanoid.Jump = true
             wait(debounce)
             fireproximityprompt(arrow.Handle:FindFirstChildWhichIsA("ProximityPrompt",true))
         end
@@ -42,7 +41,7 @@ ReqArrows:Button("Teleport",function()
         local reqarrow = workspace.Map.Items.SpawnedItems:FindFirstChild("Requiem Arrow")
         HRP.CFrame = reqarrow.Handle.CFrame
         if autopickup then
-            game.Players.LocalPlayer.Character.Humanoid.Jump = true
+            wait(debounce)
             fireproximityprompt(reqarrow.Handle:FindFirstChildWhichIsA("ProximityPrompt",true))
         end
     end
@@ -56,7 +55,6 @@ Lokakaka:Button("Teleport",function()
         local roka = workspace.Map.Items.SpawnedItems:FindFirstChild("Lokakaka")
         HRP.CFrame = roka.Handle.CFrame
         if autopickup then
-            game.Players.LocalPlayer.Character.Humanoid.Jump = true
             wait(debounce)
             fireproximityprompt(roka.Handle:FindFirstChildWhichIsA("ProximityPrompt",true))
         end
@@ -71,7 +69,6 @@ Mask:Button("Teleport",function()
         local mask = workspace.Map.Items.SpawnedItems:FindFirstChild("Stone Mask")
         HRP.CFrame = mask.Handle.CFrame
         if autopickup then
-            game.Players.LocalPlayer.Character.Humanoid.Jump = true
             wait(debounce)
             fireproximityprompt(mask.Handle:FindFirstChildWhichIsA("ProximityPrompt",true))
         end
@@ -86,7 +83,6 @@ Ball:Button("Teleport",function()
         local ball = workspace.Map.Items.SpawnedItems:FindFirstChild("Steel Ball")
         HRP.CFrame = ball.Handle.CFrame
         if autopickup then
-            game.Players.LocalPlayer.Character.Humanoid.Jump = true
             wait(debounce)
             fireproximityprompt(ball.Handle:FindFirstChildWhichIsA("ProximityPrompt",true))
         end
@@ -101,9 +97,8 @@ Cash:Button("Teleport",function()
         local cash = workspace.Map.Items.SpawnedItems:FindFirstChild("Cash")
         HRP.CFrame = cash.CFrame
         if autopickup then
-            game.Players.LocalPlayer.Character.Humanoid.Jump = true
             wait(debounce)
-            fireproximityprompt(cash.Handle:FindFirstChildWhichIsA("ProximityPrompt",true))
+            fireproximityprompt(cash:FindFirstChildWhichIsA("ProximityPrompt",true))
         end
     end
 end)
@@ -116,9 +111,8 @@ Coin:Button("Teleport",function()
         local coin = workspace.Map.Items.SpawnedItems:FindFirstChild("Coin")
         HRP.CFrame = coin.CFrame
         if autopickup then
-            game.Players.LocalPlayer.Character.Humanoid.Jump = true
             wait(debounce)
-            fireproximityprompt(coin.Handle:FindFirstChildWhichIsA("ProximityPrompt",true))
+            fireproximityprompt(coin:FindFirstChildWhichIsA("ProximityPrompt",true))
         end
     end
 end)
@@ -131,7 +125,6 @@ Presents:Button("Teleport",function()
         local present = workspace.Map.Items.SpawnedItems:FindFirstChild("Present")
         HRP.CFrame = present.Handle.CFrame
         if autopickup then
-            game.Players.LocalPlayer.Character.Humanoid.Jump = true
             wait(debounce)
             fireproximityprompt(present.Handle:FindFirstChildWhichIsA("ProximityPrompt",true))
         end
