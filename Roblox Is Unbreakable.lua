@@ -23,7 +23,7 @@ end)
 Settings:Slider("Debounce",{
     min = 0;
     max = 1;
-    precise = true;
+    precise = false;
 },function(value)
     debounce = value
 end)
