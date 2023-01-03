@@ -20,14 +20,6 @@ Settings:Toggle("Auto Pickup",function(bool)
     autopickup = bool
 end)
 
-Settings:Slider("Debounce",{
-    min = 0;
-    max = 1;
-    precise = false;
-},function(value)
-    debounce = value
-end)
-
 Arrows:Toggle("Active",function(bool)
     Arrowesp = bool
 end)
